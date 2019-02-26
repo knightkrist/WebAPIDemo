@@ -143,7 +143,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OutputResultController.cs" />
     <Compile Include="Controllers\SegmentsController.cs" />
+    <Compile Include="Controllers\SegmentsTripsController.cs" />
     <Compile Include="Data\TripContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -194,9 +196,19 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Segments.cshtml" />
+    <Content Include="Views\OutputResult\Create.cshtml" />
+    <Content Include="Views\OutputResult\Delete.cshtml" />
+    <Content Include="Views\OutputResult\Details.cshtml" />
+    <Content Include="Views\OutputResult\Edit.cshtml" />
+    <Content Include="Views\OutputResult\Index.cshtml" />
+    <Content Include="Views\SegmentsTrips\Index.cshtml" />
+    <Content Include="Views\SegmentsTrips\Create.cshtml" />
+    <Content Include="Views\SegmentsTrips\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

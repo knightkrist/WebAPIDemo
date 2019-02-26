@@ -7,6 +7,8 @@ namespace WebAPIDemo.Models
 {
     public class OutputResult
     {
+        public int SegmentId { get; set; }
+
         public string Name { get; set; }
 
         public int TripId { get; set; }

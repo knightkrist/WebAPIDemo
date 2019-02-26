@@ -33,6 +33,7 @@ namespace WebAPIDemo.Controllers
 
                 return new OutputResult()
                 {
+                    SegmentId = c.Id,
                     Name = c.Name,
                     TripId = c.TripId,
                     TripName = name,
@@ -57,6 +58,7 @@ namespace WebAPIDemo.Controllers
 
             var item = new OutputResult()
             {
+                SegmentId = segment.Id,
                 Name = segment.Name,
                 TripId = segment.TripId,
                 TripName = name,

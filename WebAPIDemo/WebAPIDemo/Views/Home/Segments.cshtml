@@ -1,0 +1,25 @@
+﻿@model WebAPIDemo.Models.OutputResult
+@{
+    ViewBag.Title = "Segments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Segments</h2>
+
+<div class="container" style="width:400px;height:500px">
+
+    @using (Html.BeginForm("Segments", "Home", FormMethod.Post))
+    {
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @placeholder = "Full name" })
+
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control", @placeholder = "Small Description" })
+
+        @Html.DropDownListFor(x => x.TripId, ViewBag.trip_list as SelectList, "---Select----", new { @class = "form-control" })
+
+
+        <input type="submit" value="Submit" class="btn btn-block btn-danger" />
+    }
+
+
+
+</div>

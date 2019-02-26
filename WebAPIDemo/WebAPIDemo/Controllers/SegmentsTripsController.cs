@@ -91,6 +91,10 @@ namespace WebAPIDemo.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
+            List<Trip> trip = db.Trips.ToList();
+
+            ViewBag.trip_list = new SelectList(trip, "Id", "Name");
+
             int tripId = db.Segments.Where(i => i.Id == id).Select(i => i.TripId).First();
 
             string name = db.Trips.Where(i => i.Id == tripId).Select(i => i.Name).Single();
@@ -122,7 +126,18 @@ namespace WebAPIDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(oresult).State = EntityState.Modified;
+
+                Segment sg = await db.Segments.FindAsync(oresult.SegmentId);
+
+
+                sg.Name = oresult.Name;
+                sg.TripId = oresult.TripId;
+                sg.Description = oresult.Description;
+
+                db.Segments.Attach(sg);
+                db.Entry(sg).State = EntityState.Modified;
+                
+
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }

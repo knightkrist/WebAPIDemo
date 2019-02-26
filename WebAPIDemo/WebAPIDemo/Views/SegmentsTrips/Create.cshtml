@@ -35,6 +35,7 @@
             @Html.LabelFor(model => model.TripId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.TripId, ViewBag.trip_list as SelectList, "---Select----", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TripId, "", new { @class = "text-danger" })
             </div>
         </div>
 

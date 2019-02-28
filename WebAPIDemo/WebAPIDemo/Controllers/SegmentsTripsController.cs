@@ -143,5 +143,31 @@ namespace WebAPIDemo.Controllers
             }
             return View(oresult);
         }
+
+        // GET: OutputResult/Delete/5
+        public async Task<ActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Segment segment = await db.Segments.FindAsync(id);
+            if (segment == null)
+            {
+                return HttpNotFound();
+            }
+            return View(segment);
+        }
+
+        // POST: OutputResult/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> DeleteConfirmed(int id)
+        {
+            Segment segment = await db.Segments.FindAsync(id);
+            db.Segments.Remove(segment);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
     }
 }

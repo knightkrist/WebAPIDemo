@@ -205,6 +205,7 @@
     <Content Include="Views\SegmentsTrips\Index.cshtml" />
     <Content Include="Views\SegmentsTrips\Create.cshtml" />
     <Content Include="Views\SegmentsTrips\Edit.cshtml" />
+    <Content Include="Views\SegmentsTrips\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
